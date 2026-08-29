@@ -1,0 +1,7 @@
+.DS_Store
+FinderBack.app/
+*.zip
+*.dmg
+SHA256SUMS.txt
+.build/
+dist/
