@@ -30,7 +30,7 @@ The app lives in the menu bar under the `⇄` icon and includes Settings, the st
 
 ## See it in action
 
-[**Watch the demo video (52 seconds)**](https://github.com/adfd3ewdf3/FinderBack/raw/refs/heads/main/docs/media/finderback-demo.mp4)
+[**Watch the demo video (52 seconds)**](https://github.com/adfd3ewdf3/FinderBack/raw/refs/heads/main/docs/media/finderback-demo.mov)
 
 Right-click empty space in Finder, then use the attached Back and Forward controls to navigate.
 
