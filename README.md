@@ -4,7 +4,7 @@ Right-click empty space in Finder and get **Back** and **Forward** controls dire
 
 > **Want the quickest installation?**
 >
-> A ready-to-run Apple Silicon build is available for **$9.99**. It avoids installing developer tools or compiling the app yourself.
+> A ready-to-run Apple Silicon build is planned for **$9.99**. It avoids installing developer tools or compiling the app yourself.
 >
 > **Ready-to-run download — $9.99. Checkout link coming shortly.**
 
@@ -12,7 +12,7 @@ The source code remains free under the MIT License. The paid download is a conve
 
 ## Before you buy
 
-- Requires **Apple Silicon** and **macOS 26 or later**.
+- Tested on **Apple Silicon** running **macOS 26**. Earlier macOS versions and Intel Macs have not been tested.
 - FinderBack is currently distributed without an Apple Developer ID. On first launch, macOS will block it until you choose **System Settings → Privacy & Security → Open Anyway**.
 - FinderBack also requires Accessibility permission to detect right-clicks in Finder and trigger Back/Forward.
 - This is a digital download. Please check compatibility before purchasing. Refunds are not offered after delivery except where required by law or the payment platform.
@@ -27,6 +27,20 @@ Two looks are available from Settings:
 - **Arrows** — a compact ← | → row.
 
 The app lives in the menu bar under the `⇄` icon and includes Settings, the style switch, Open at Login, and Quit.
+
+## See it in action
+
+[**Watch the demo video (52 seconds)**](https://github.com/adfd3ewdf3/FinderBack/raw/refs/heads/main/docs/media/finderback-demo.mp4)
+
+Right-click empty space in Finder, then use the attached Back and Forward controls to navigate.
+
+| Labels | Arrows |
+| :---: | :---: |
+| <img src="docs/media/labels.jpg" alt="Finder context menu with Back and Forward labels" width="220"> | <img src="docs/media/arrows.jpg" alt="Finder context menu with compact Back and Forward arrows" width="220"> |
+
+Switch styles and enable Open at Login in Settings:
+
+<img src="docs/media/settings.jpg" alt="FinderBack settings showing the Arrows and Labels styles, Open at Login, and Accessibility status" width="427">
 
 ## Privacy and Accessibility permission
 
@@ -49,6 +63,8 @@ FinderBack never reads filenames or paths, never accesses files, never makes net
 The paid download includes its SHA-256 checksum so you can verify that the file was not corrupted after packaging.
 
 ## Build it yourself for free
+
+The current build script targets Apple Silicon and macOS 26. Compatibility with earlier macOS versions has not been verified.
 
 Building requires the Xcode Command Line Tools:
 
@@ -77,7 +93,7 @@ Source files are under `Sources/`; visual constants live in `Sources/Config.swif
 
 ## Known limitations
 
-- Apple Silicon and macOS 26+ only.
+- Tested on Apple Silicon with macOS 26; earlier macOS versions and Intel Macs are unverified.
 - Multi-monitor behavior is not yet verified.
 - The attached navigation bar is always dark.
 - Row height does not scale with the system large-text setting.
