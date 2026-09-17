@@ -1,38 +1,24 @@
 # FinderBack
 
-Right-click empty space in Finder and get **Back** and **Forward** controls directly on the context menu.
+**Back and Forward, right in Finder’s right-click menu.** Right-click empty space in a Finder window and navigate using a small bar attached to the context menu.
 
-> **Want the quickest installation?**
->
-> A ready-to-run Apple Silicon build is planned for **$9.99**. It avoids installing developer tools or compiling the app yourself.
->
-> **Ready-to-run download — $9.99. Checkout link coming shortly.**
+## Get FinderBack — $9.99, one time
 
-The source code remains free under the MIT License. The paid download is a convenience build of the same app; it does not hide extra features.
+**[Buy the ready-to-run Mac app — $9.99 USD](https://finderbackward.lemonsqueezy.com/checkout/buy/e0555cfd-257c-4c38-ba31-ef856bbf1427)**
 
-## Before you buy
+Download, move the app to Applications, and follow the included first-launch instructions. No developer tools, compiling, subscription, or license-key activation.
 
-- Tested on **Apple Silicon** running **macOS 26**. Earlier macOS versions and Intel Macs have not been tested.
-- FinderBack is currently distributed without an Apple Developer ID. On first launch, macOS will block it until you choose **System Settings → Privacy & Security → Open Anyway**.
-- FinderBack also requires Accessibility permission to detect right-clicks in Finder and trigger Back/Forward.
-- This is a digital download. Please check compatibility before purchasing. Refunds are not offered after delivery except where required by law or the payment platform.
+- Both styles included: stacked **Back / Forward** labels or compact **← / →** arrows.
+- Settings and optional **Open at Login**, available from the menu bar.
+- Digital delivery after checkout, with installation instructions and the MIT license.
 
-## What it does
+**The packaged download is for Apple Silicon Macs running macOS 26 or later.** Tested on macOS 26. It is not Developer ID-signed or notarized: macOS normally requires **System Settings → Privacy & Security → Open Anyway** on first launch. You must also enable **Accessibility** for FinderBack.
 
-Finder has Back and Forward navigation through keyboard shortcuts (⌘[ and ⌘]) and toolbar controls. FinderBack adds them to the right-click menu: right-click empty space in a Finder window, then choose Back or Forward from the small attached control bar.
-
-Two looks are available from Settings:
-
-- **Labels** — Back and Forward as two stacked rows.
-- **Arrows** — a compact ← | → row.
-
-The app lives in the menu bar under the `⇄` icon and includes Settings, the style switch, Open at Login, and Quit.
+The paid download saves you compiling the app yourself. The source remains free under the MIT License, with the same features. [Product details and terms](https://finderbac.fdse064.workers.dev/#terms).
 
 ## See it in action
 
-[**Watch the demo video (52 seconds)**](https://github.com/adfd3ewdf3/FinderBack/raw/refs/heads/main/docs/media/finderback-demo.mov)
-
-Right-click empty space in Finder, then use the attached Back and Forward controls to navigate.
+[**Watch the demo (52 seconds)**](https://github.com/adfd3ewdf3/FinderBack/raw/refs/heads/main/docs/media/finderback-demo.mov)
 
 | Labels | Arrows |
 | :---: | :---: |
@@ -40,33 +26,29 @@ Right-click empty space in Finder, then use the attached Back and Forward contro
 
 Switch styles and enable Open at Login in Settings:
 
-<img src="docs/media/settings.jpg" alt="FinderBack settings showing the Arrows and Labels styles, Open at Login, and Accessibility status" width="427">
+<img src="docs/media/settings.jpg" alt="FinderBack settings with style choices, Open at Login, and Accessibility status" width="427">
 
-## Privacy and Accessibility permission
+## Install the download
 
-Accessibility is a powerful permission, so FinderBack deliberately does very little:
+1. [Buy FinderBack](https://finderbackward.lemonsqueezy.com/checkout/buy/e0555cfd-257c-4c38-ba31-ef856bbf1427) and download the ZIP provided after checkout.
+2. Unzip it and drag `FinderBack.app` to **Applications**. Quit any older copy first.
+3. Open FinderBack. If macOS blocks it, dismiss the alert, then choose **Open Anyway** in **System Settings → Privacy & Security**. Confirm Open when prompted.
+4. Enable FinderBack in **System Settings → Privacy & Security → Accessibility**.
+5. Right-click empty space inside a Finder window and choose Back or Forward.
 
-- Reads mouse coordinates using a listen-only event tap. It cannot swallow, modify, or delay clicks.
-- Reads only the accessibility role under the cursor and the position and size of Finder's context menu.
-- Sends only ⌘[ and ⌘] to Finder.
+FinderBack lives in the menu bar under the two-arrow icon; it has no Dock icon. Use its menu to open Settings or quit. Turn on Open at Login only after moving the app to Applications.
 
-FinderBack never reads filenames or paths, never accesses files, never makes network requests, and contains no analytics or crash reporting. Keystrokes are not logged or stored. The complete source is in this repository for inspection.
+The download includes `START-HERE.txt`, source revision details, and file checksums. After an update, you may need to grant Accessibility again.
 
-## Install the ready-to-run build
+## Privacy
 
-1. Buy and download FinderBack using the checkout link at the top of this page once it is live.
-2. Unzip the download and drag `FinderBack.app` to `/Applications`.
-3. Try to open FinderBack. macOS will block the unsigned app.
-4. Open **System Settings → Privacy & Security**, scroll down, and click **Open Anyway**.
-5. In **System Settings → Privacy & Security → Accessibility**, enable FinderBack.
+FinderBack uses a **listen-only** mouse and keyboard event tap. It cannot swallow, change, or delay your clicks. It reads accessibility roles and the position and size of Finder’s context menu, then sends Finder its Back/Forward shortcuts, **⌘[** and **⌘]**.
 
-The paid download includes its SHA-256 checksum so you can verify that the file was not corrupted after packaging.
+It does not read filenames, paths, or your files. It makes no network requests and contains no analytics or crash reporting. Keystrokes are not logged or stored. Style preferences are saved locally using macOS preferences. The source is available here for inspection.
 
-## Build it yourself for free
+## Build from source
 
-The current build script targets Apple Silicon and macOS 26. Compatibility with earlier macOS versions has not been verified.
-
-Building requires the Xcode Command Line Tools:
+For developers and people who prefer to compile it themselves, the source is free. The build script targets Apple Silicon and macOS 26. Building requires the Xcode Command Line Tools:
 
 ```bash
 xcode-select --install
@@ -75,15 +57,13 @@ cd FinderBack
 ./build.sh
 ```
 
-This creates `FinderBack.app` in the project folder. Drag it to `/Applications` and open it using the same **Open Anyway** and Accessibility steps above.
-
-Each locally compiled build has a new ad-hoc signing identity, so macOS may ask you to grant Accessibility permission again after rebuilding.
+This creates `FinderBack.app` in the project folder. Move it to Applications and enable Accessibility. Each build is ad-hoc signed; rebuilding may require granting Accessibility again.
 
 ## Development
 
 ```bash
 ./run.sh                  # run in the foreground
-./run.sh --debug          # trace mouse and key events
+./run.sh --debug          # show event diagnostics
 ./run.sh --style=arrows   # temporarily use the arrow style
 ./run-bundle.sh           # launch the app bundle and stream its logs
 ./kill.sh                 # stop FinderBack
@@ -93,12 +73,12 @@ Source files are under `Sources/`; visual constants live in `Sources/Config.swif
 
 ## Known limitations
 
-- Tested on Apple Silicon with macOS 26; earlier macOS versions and Intel Macs are unverified.
-- Multi-monitor behavior is not yet verified.
+- Tested on Apple Silicon with macOS 26. The packaged build requires macOS 26 or later and does not support Intel Macs.
+- Multi-monitor behavior is unverified.
 - The attached navigation bar is always dark.
 - Row height does not scale with the system large-text setting.
-- Because the app is not Developer ID-signed or notarized, macOS displays an extra first-launch warning.
+- The app is not Developer ID-signed or notarized, so macOS normally requires explicit approval on first launch.
 
-## License
+## Support and license
 
-MIT. See [`LICENSE`](LICENSE).
+[Report a problem or ask a question](https://github.com/adfd3ewdf3/FinderBack/issues). Licensed under [MIT](LICENSE).
